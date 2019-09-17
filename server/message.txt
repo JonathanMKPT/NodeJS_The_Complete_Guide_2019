@@ -1,1 +1,1 @@
-i+moved+the+status+and+header+code+into+the+second+req.on%28%29+method+and+it+should+redirect+me+to+the+%2F+page
+rewrot+fs.writeSync+to+fs.write
