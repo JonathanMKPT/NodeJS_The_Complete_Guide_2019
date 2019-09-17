@@ -1,1 +1,1 @@
-greetings+this+message+should+be+sent+and+saved+if+you+coded+it+right%21
+i+moved+the+status+and+header+code+into+the+second+req.on%28%29+method+and+it+should+redirect+me+to+the+%2F+page
