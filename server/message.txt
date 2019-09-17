@@ -1,1 +1,1 @@
-rewrot+fs.writeSync+to+fs.write
+I+moved+my+routes+to+a+seperate+file+and+it+should+work+now
