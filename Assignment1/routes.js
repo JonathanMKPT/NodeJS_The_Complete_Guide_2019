@@ -14,7 +14,7 @@ const requestHandler = (req, res) =>{
 		res.write('<h1>Welcome to Jonathan\'s Assignment 1 Project for NodeJS</h1>');
 		//3)Add a form with a "username" <input> to the "/" page and submit a
 		//POST request to "/create-user" upon button click
-		res.write('<body><form action="/users" action="POST"><input type="username" name="users"><button>Submit User</button></form></body>');
+		res.write('<body><form action="/create-user" action="POST"><input type="username" name="users"><button>Submit User</button></form></body>');
 		res.write('</html>');
 		return res.end();
 	}
@@ -25,7 +25,20 @@ const requestHandler = (req, res) =>{
 		//-Return a list of dummy users(<ul><li>User1</li></ul>)
 		res.write('<body><ul><li>Alpha</li><li>Bravo</li><li>Charlie</li></ul></body>')
 		res.write('</html>');
-		
+		return res.end();
+	}
+	//4)Add the "/create-user" route and parse the incoming data(ie username)
+	// and log it to the console.
+	if(url === '/create-user' && method === 'POST'){
+		const body = [];
+		res.write()
+		req.on('username',(chunk) => {
+			console.log(chunk);
+			body.push(chunk);
+		});
+		req.on('end', => {
+			const parseUser = Buffer.concat(body).toString();
+		});
 	}
 	
 
