@@ -14,7 +14,7 @@ const requestHandler = (req, res) =>{
 		res.write('<h1>Welcome to Jonathan\'s Assignment 1 Project for NodeJS</h1>');
 		//3)Add a form with a "username" <input> to the "/" page and submit a
 		//POST request to "/create-user" upon button click
-		res.write('<body><form action="/create-user" action="POST"><input type="username" name="users"><button>Submit User</button></form></body>');
+		res.write('<body><form action="/create-user" method="POST"><input type="username" name="users"><button>Submit User</button></form></body>');
 		res.write('</html>');
 		return res.end();
 	}
@@ -31,14 +31,16 @@ const requestHandler = (req, res) =>{
 	// and log it to the console.
 	if(url === '/create-user' && method === 'POST'){
 		const body = [];
-		res.write()
-		req.on('username',(chunk) => {
-			console.log(chunk);
+		req.on('data',(chunk) => {
 			body.push(chunk);
 		});
-		req.on('end', => {
+		req.on('end', () => {
 			const parseUser = Buffer.concat(body).toString();
+			console.log(parseUser.split('='[1]));
 		});
+		res.statusCode = 302;
+		res.setHeader('Location','/');
+		res.end()
 	}
 	
 
