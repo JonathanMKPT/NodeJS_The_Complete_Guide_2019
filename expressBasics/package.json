@@ -1,0 +1,17 @@
+{
+  "name": "expressbasics",
+  "version": "1.0.0",
+  "description": "loading express for production in NodeJS coures",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Jonathan Thomas",
+  "license": "ISC"
+}
